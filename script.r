@@ -16,6 +16,32 @@ dataset <- Values %>%
            DischargeDate = as.Date(DischargeDate)) %>%
     mutate(LoS = difftime(DischargeDate, AdmissionDate, units="days") %>% as.numeric())
   
+
+  if (length(unique(dataset$ClientID)) > 1) {
+
+    # fig <- plotly::plotly_empty(type = "scatter", mode = "markers") %>%
+    # plotly::config(
+    #   displayModeBar = FALSE
+    # ) %>%
+    # plotly::layout(
+    #   title = list(
+    #     text = title,
+    #     yref = "Please Select a Single Client",
+    #     y = 0.5
+    #   )
+    # )
+
+    fig <- plot_ly(type='scatter') %>%
+      plotly::layout(
+        title = list(
+          text = title,
+          yref = "Please Select a Single Client",
+          y = 0.5
+        )
+      )
+
+  } else {
+
   label_seq <- rep(seq(1, 6, 1), times= ceiling((dataset %>% nrow()) / 4))
   
   label_seq <- label_seq[1:(dataset %>% nrow())]
@@ -88,6 +114,9 @@ dataset <- Values %>%
     dplyr::select(ClientID, Ward, Specialty, AdmissionDate, DischargeDate) %>% 
     tidyr::gather(key="name", value = "value", AdmissionDate, DischargeDate)
   
+
+
+
 
   # Generate the base plotly figure
   # This just puts invisible points but they are important for setting up the axes
@@ -238,6 +267,8 @@ dataset <- Values %>%
                 )
                 
   )
+
+  }
 
   p <- fig
 ####################################################

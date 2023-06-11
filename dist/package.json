@@ -1,0 +1,17 @@
+{
+    "version": "1.0.6",
+    "author": {"name":"Sammi Rosser","email":"sammi.j.rosser@gmail.com"},
+    "resources": [
+        {
+            "resourceId": "rId0",
+            "sourceType": 5,
+            "file": "resources/inpatientwardtimelinevisual6964CC46CC6D45BA8D71B2EA4876C4EA.pbiviz.json"
+        }
+    ],
+    "visual": {"name":"inpatientwardtimelinevisual","displayName":"inpatient_ward_timeline_visual","guid":"inpatientwardtimelinevisual6964CC46CC6D45BA8D71B2EA4876C4EA","visualClassName":"Visual","version":"1.0.6","description":"Display any non-overlapping timeline data - designed for inpatient stays","supportUrl":"https://bergam0t.github.io/","gitHubUrl":"https://github.com/Bergam0t/service_use_timelines/"},
+    "metadata": {
+        "pbivizjson": {
+            "resourceId": "rId0"
+        }
+    }  
+}
